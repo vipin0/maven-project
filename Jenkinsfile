@@ -19,6 +19,8 @@ pipeline{
         stage('deploy'){
             steps{
                 echo "Deploying application"
+                sh 'docker rm -f java-mvn-app'
+                sh 'docker run --rm -p 4444:8080 --name java-mvn-app java-mvn:0.1'
             }
         }
     }
