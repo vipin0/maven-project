@@ -11,11 +11,15 @@ pipeline{
             }
         }
         stage('build docker image'){
-            echo "Buildind docker image"
-            sh 'docker build -t java-mvn:0.1 .'
+            steps{
+                echo "Buildind docker image"
+                sh 'docker build -t java-mvn:0.1 .'
+            }
         }
         stage('deploy'){
-            echo "Deploying application"
+            steps{
+                echo "Deploying application"
+            }
         }
     }
     post{
