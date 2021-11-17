@@ -21,6 +21,7 @@ pipeline{
                 echo "Deploying application"
                 sh 'docker rm -f java-mvn-app'
                 sh 'docker run --rm -dp 4444:8080 --name java-mvn-app java-mvn:0.1'
+                echo "Application is live on <ip-address>:4444"
             }
         }
     }
